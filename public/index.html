@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Battleships</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="main">
+	<div id="connect">
+		<h1>BATTLESHIPS</h1>
+		<button onclick="connect()">2 PLAYER</button>
+    <p id="failReason"></p>
+  </div>
+  <div id="setup" style="display:none">
+    <h3>BATTLESHIPS - SETUP</h3>
+    <p id="playerStatus">Waiting for another player...</p>
+    <div id="bothConnected" style="display:none;">
+      <div id="setupGrid" class="grid" style="padding-bottom:25px;"></div>
+      <label for="usernameBox">Player name:</label>
+      <input id="usernameBox" type="text"><br>
+      <p id="shipsNeeded">Ships left to place: Patrol Boat (2), Submarine (3), Destroyer (3), Battleship (4), Carrier (5)</p>
+      <button onclick="ready()" id="playButton" style="display:none">DONE</button>
+    </div>
+  </div>
+  <div id="game" style="display:none">
+    <h3>BATTLESHIPS</h3>
+    <div id="shootGrid" class="grid"></div>
+    <p id="information">Getting information...</p>
+    <div id="shipGrid" class="grid"></div>
+  </div>
+	<script src="socket.io/socket.io.js"></script>
+  <script src="styleHandler.js"></script>
+  <script src="gridUpdater.js"></script>
+  <script src="turnHandler.js"></script>
+  <script src="playerHandler.js"></script>
+	<script src="gameHandler.js"></script>
+</body>
+
+</html>
